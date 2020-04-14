@@ -4,7 +4,7 @@
 #
 Name     : flameshot
 Version  : 0.6.0
-Release  : 1
+Release  : 2
 URL      : https://github.com/lupoDharkael/flameshot/archive/v0.6.0.tar.gz
 Source0  : https://github.com/lupoDharkael/flameshot/archive/v0.6.0.tar.gz
 Summary  : Powerful yet simple to use screenshot software
@@ -33,12 +33,12 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
 export GCC_IGNORE_WERROR=1
-%qmake -config ltcg -config fat-static-lto
+%qmake QMAKE_CFLAGS+=-fno-lto QMAKE_CXXFLAGS+=-fno-lto
 test -r config.log && cat config.log
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1586777345
+export SOURCE_DATE_EPOCH=1586855544
 rm -rf %{buildroot}
 %make_install
 
