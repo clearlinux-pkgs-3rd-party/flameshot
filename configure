@@ -1,0 +1,3 @@
+CONFIG+=packaging
+CONFIG-=debug
+CONFIG+=release
